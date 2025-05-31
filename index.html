@@ -1,1 +1,484 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><title>Pujan Budhathoki</title><link href="/static/css/main.81cf396e.chunk.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script>!function(e){function r(r){for(var n,l,f=r[0],i=r[1],a=r[2],c=0,s=[];c<f.length;c++)l=f[c],Object.prototype.hasOwnProperty.call(o,l)&&o[l]&&s.push(o[l][0]),o[l]=0;for(n in i)Object.prototype.hasOwnProperty.call(i,n)&&(e[n]=i[n]);for(p&&p(r);s.length;)s.shift()();return u.push.apply(u,a||[]),t()}function t(){for(var e,r=0;r<u.length;r++){for(var t=u[r],n=!0,f=1;f<t.length;f++){var i=t[f];0!==o[i]&&(n=!1)}n&&(u.splice(r--,1),e=l(l.s=t[0]))}return e}var n={},o={1:0},u=[];function l(r){if(n[r])return n[r].exports;var t=n[r]={i:r,l:!1,exports:{}};return e[r].call(t.exports,t,t.exports,l),t.l=!0,t.exports}l.m=e,l.c=n,l.d=function(e,r,t){l.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},l.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},l.t=function(e,r){if(1&r&&(e=l(e)),8&r)return e;if(4&r&&"object"==typeof e&&e&&e.__esModule)return e;var t=Object.create(null);if(l.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:e}),2&r&&"string"!=typeof e)for(var n in e)l.d(t,n,function(r){return e[r]}.bind(null,n));return t},l.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return l.d(r,"a",r),r},l.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},l.p="/";var f=this.webpackJsonprouter=this.webpackJsonprouter||[],i=f.push.bind(f);f.push=r,f=f.slice();for(var a=0;a<f.length;a++)r(f[a]);var p=i;t()}([])</script><script src="/static/js/2.606eb5de.chunk.js"></script><script src="/static/js/main.fdfeac37.chunk.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pujan Budhathoki - Software Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e293b; /* Slightly darker slate for track */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #38bdf8; /* Sky blue for thumb */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0ea5e9; /* Darker sky blue on hover */
+        }
+        /* Simple fade-in animation for sections */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(30px); /* Increased translateY for more noticeable effect */
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Custom icon for Devpost if Font Awesome doesn't have it */
+        .fa-devpost::before {
+            font-family: "Font Awesome 6 Brands"; /* Ensure it uses FA brands */
+            content: "\f366"; /* Using a generic code icon as placeholder, replace if a better one is found or use an SVG */
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-300">
+
+    <header class="bg-slate-800/80 backdrop-blur-md shadow-lg fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-sky-400 hover:text-sky-300 transition-colors">Pujan Budhathoki</a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#about" class="hover:text-sky-400 transition-colors">About</a>
+                <a href="#projects" class="hover:text-sky-400 transition-colors">Projects</a>
+                <a href="#skills" class="hover:text-sky-400 transition-colors">Skills</a>
+                <a href="#experience" class="hover:text-sky-400 transition-colors">Experience</a>
+                <a href="#certifications" class="hover:text-sky-400 transition-colors">Certifications</a>
+                <a href="#contact" class="hover:text-sky-400 transition-colors">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-slate-300 hover:text-sky-400 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800">
+            <a href="#about" class="block py-2 px-6 text-sm hover:bg-slate-700 hover:text-sky-400 transition-colors">About</a>
+            <a href="#projects" class="block py-2 px-6 text-sm hover:bg-slate-700 hover:text-sky-400 transition-colors">Projects</a>
+            <a href="#skills" class="block py-2 px-6 text-sm hover:bg-slate-700 hover:text-sky-400 transition-colors">Skills</a>
+            <a href="#experience" class="block py-2 px-6 text-sm hover:bg-slate-700 hover:text-sky-400 transition-colors">Experience</a>
+            <a href="#certifications" class="block py-2 px-6 text-sm hover:bg-slate-700 hover:text-sky-400 transition-colors">Certifications</a>
+            <a href="#contact" class="block py-2 px-6 text-sm hover:bg-slate-700 hover:text-sky-400 transition-colors">Contact</a>
+        </div>
+    </header>
+
+    <main class="pt-20"> <section id="hero" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-sky-900 text-center px-6 fade-in-section">
+            <div class="max-w-3xl">
+                <img src="https://placehold.co/150x150/60A5FA/FFFFFF?text=PB" alt="Pujan Budhathoki" class="w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full mb-6 border-4 border-sky-500 shadow-xl">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white">Hi, I'm <span class="text-sky-400">Pujan Budhathoki</span></h1>
+                <p class="text-xl md:text-2xl mb-8 text-slate-300">Software Developer | BS in Software Engineering</p>
+                <a href="#projects" class="bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition-colors shadow-md hover:shadow-lg transform hover:scale-105">View My Work</a>
+                 <div class="mt-12 flex justify-center space-x-6">
+                    <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-sky-400 transition-colors" title="GitHub">
+                        <i class="fab fa-github fa-2x"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/pujanbu/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-sky-400 transition-colors" title="LinkedIn">
+                        <i class="fab fa-linkedin fa-2x"></i>
+                    </a>
+                    <a href="https://devpost.com/PujanBudhathoki" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-sky-400 transition-colors" title="Devpost">
+                        <i class="fas fa-code fa-2x"></i>
+                    </a>
+                     <a href="mailto:pujan.budhathoki@hotmail.com" class="text-slate-400 hover:text-sky-400 transition-colors" title="Email">
+                        <i class="fas fa-envelope fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-16 md:py-24 bg-slate-800 fade-in-section">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-sky-400">About Me</h2>
+                <div class="max-w-3xl mx-auto text-lg leading-relaxed text-slate-300">
+                    <p class="mb-4 text-center">
+                        I am a Software Developer with a Bachelor of Science in Software Engineering from The University of Texas at Arlington (Class of 2020).
+                        My experience spans developing robust applications, implementing event-driven architectures, and leading development teams through the full software development lifecycle.
+                    </p>
+                    <p class="mb-4 text-center">
+                        I am passionate about leveraging technology to solve complex problems, enhance system efficiency, and deliver high-quality software solutions. I have a strong background in C#, Java, Python, JavaScript (Angular), and SQL, with experience in cloud platforms like MS Azure.
+                    </p>
+                    <p class="text-center">
+                        I thrive in collaborative environments and have a proven track record of coordinating with third-party vendors and working effectively within DevOps teams. My goal is to continuously learn and contribute to impactful projects.
+                        </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-16 md:py-24 fade-in-section">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-sky-400">Featured Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-slate-800 rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300 flex flex-col">
+                        <img src="https://placehold.co/600x400/1E293B/94A3B8?text=Trash+Cleanup" alt="Trash Cleanup App Thumbnail" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-semibold mb-2 text-white">Trash Cleanup App (2020)</h3>
+                            <p class="text-sm text-slate-400 mb-3">Algorithm Design, UI/UX, Database Schema</p>
+                            <p class="mb-4 text-slate-300 leading-relaxed flex-grow">
+                                Co-developed an algorithm to help organizers effectively manage trash cleanup events and resources. Contributed to UI/UX and database schema. Built a tactical view for optimal participant engagement.
+                            </p>
+                            <div class="mt-auto flex space-x-4">
+                                <a href="https://devpost.com/PujanBudhathoki" target="_blank" class="text-sky-400 hover:text-sky-300 font-medium transition-colors">View on Devpost <i class="fas fa-external-link-alt ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-800 rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300 flex flex-col">
+                        <img src="https://placehold.co/600x400/1E293B/94A3B8?text=Seeker+App" alt="Seeker App Thumbnail" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-semibold mb-2 text-white">Seeker (Hacklahoma 2019)</h3>
+                            <p class="text-sm text-slate-400 mb-3">Flutter, API Handling, UI Design</p>
+                            <p class="mb-4 text-slate-300 leading-relaxed flex-grow">
+                                Created a cross-platform mobile application using Flutter to assist visually impaired individuals by providing information about their surroundings. Responsible for API handling and general UI.
+                            </p>
+                             <div class="mt-auto flex space-x-4">
+                                <a href="https://devpost.com/PujanBudhathoki" target="_blank" class="text-sky-400 hover:text-sky-300 font-medium transition-colors">View on Devpost <i class="fas fa-external-link-alt ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-800 rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300 flex flex-col">
+                        <img src="https://placehold.co/600x400/1E293B/94A3B8?text=Smart+Journal" alt="Smart Journal Thumbnail" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-semibold mb-2 text-white">Smart Journal (HackUTA 2018)</h3>
+                            <p class="text-sm text-slate-400 mb-3">Vue.js, API Management, Data Visualization</p>
+                            <p class="mb-4 text-slate-300 leading-relaxed flex-grow">
+                                Co-engineered a web journal app using Vue.js to track time with productivity levels, allowing graphical access. Managed API calls and worked on data visualization. (Winner Best Community Project)
+                            </p>
+                            <div class="mt-auto flex space-x-4">
+                                <a href="https://devpost.com/PujanBudhathoki" target="_blank" class="text-sky-400 hover:text-sky-300 font-medium transition-colors">View on Devpost <i class="fas fa-external-link-alt ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="bg-slate-800 rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300 flex flex-col">
+                        <img src="https://placehold.co/600x400/1E293B/94A3B8?text=Health+App" alt="Personal Health Care Management Thumbnail" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-semibold mb-2 text-white">Personal Health Care Management (2018)</h3>
+                            <p class="text-sm text-slate-400 mb-3">Android, Database Design</p>
+                            <p class="mb-4 text-slate-300 leading-relaxed flex-grow">
+                                Designed a database schema for an Android application to track calorie intake, medication routines, and workouts.
+                            </p>
+                            <div class="mt-auto flex space-x-4">
+                                <a href="https://devpost.com/PujanBudhathoki" target="_blank" class="text-sky-400 hover:text-sky-300 font-medium transition-colors">More Info <i class="fas fa-external-link-alt ml-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-16 md:py-24 bg-slate-800 fade-in-section">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-sky-400">Technical Skills</h2>
+                <div class="max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-semibold text-center mb-6 text-sky-300">Proficient:</h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 text-center mb-10">
+                        <div class="bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                            <i class="fab fa-python fa-2x mb-2 text-yellow-400"></i><h4 class="text-lg font-semibold text-white">Python</h4>
+                        </div>
+                        <div class="bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                            <i class="fab fa-java fa-2x mb-2 text-red-500"></i><h4 class="text-lg font-semibold text-white">Java</h4>
+                        </div>
+                        <div class="bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                            <i class="fas fa-code fa-2x mb-2 text-purple-400"></i><h4 class="text-lg font-semibold text-white">C#</h4>
+                        </div>
+                        <div class="bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                            <i class="fab fa-js-square fa-2x mb-2 text-yellow-500"></i><h4 class="text-lg font-semibold text-white">JavaScript</h4>
+                        </div>
+                        <div class="bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                            <i class="fab fa-angular fa-2x mb-2 text-red-600"></i><h4 class="text-lg font-semibold text-white">Angular</h4>
+                        </div>
+                        <div class="bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                            <i class="fas fa-database fa-2x mb-2 text-sky-400"></i><h4 class="text-lg font-semibold text-white">SQL</h4>
+                        </div>
+                        <div class="bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                            <i class="fas fa-leaf fa-2x mb-2 text-green-500"></i><h4 class="text-lg font-semibold text-white">Spring Boot</h4>
+                        </div>
+                        <div class="bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                            <i class="fab fa-bootstrap fa-2x mb-2 text-purple-500"></i><h4 class="text-lg font-semibold text-white">Bootstrap</h4>
+                        </div>
+                        <div class="bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                            <i class="fas fa-vial fa-2x mb-2 text-teal-400"></i><h4 class="text-lg font-semibold text-white">Moq testing</h4>
+                        </div>
+                        <div class="bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                            <i class="fab fa-git-alt fa-2x mb-2 text-orange-500"></i><h4 class="text-lg font-semibold text-white">Git</h4>
+                        </div>
+                         <div class="bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                            <i class="fab fa-github fa-2x mb-2 text-slate-200"></i><h4 class="text-lg font-semibold text-white">GitHub</h4>
+                        </div>
+                         <div class="bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                            <i class="fab fa-windows fa-2x mb-2 text-blue-400"></i><h4 class="text-lg font-semibold text-white">Azure Repos</h4> </div>
+                         <div class="bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                            <i class="fas fa-tools fa-2x mb-2 text-gray-400"></i><h4 class="text-lg font-semibold text-white">Visual Studio</h4>
+                        </div>
+                        <div class="bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                            <i class="fas fa-code fa-2x mb-2 text-blue-500"></i><h4 class="text-lg font-semibold text-white">VS Code</h4>
+                        </div>
+                         <div class="bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                            <i class="fas fa-rocket fa-2x mb-2 text-orange-600"></i><h4 class="text-lg font-semibold text-white">Postman</h4>
+                        </div>
+                         <div class="bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                            <i class="fas fa-file-alt fa-2x mb-2 text-yellow-600"></i><h4 class="text-lg font-semibold text-white">Laserfiche</h4>
+                        </div>
+                        <div class="bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                            <i class="fab fa-microsoft fa-2x mb-2 text-blue-300"></i><h4 class="text-lg font-semibold text-white">MS Office</h4>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-center mb-6 text-sky-300">Exposure:</h3>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 text-center">
+                        <div class="bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                            <i class="fab fa-react fa-2x mb-2 text-sky-500"></i><h4 class="text-lg font-semibold text-white">React JS</h4>
+                        </div>
+                        <div class="bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                            <i class="fas fa-feather-alt fa-2x mb-2 text-green-400"></i><h4 class="text-lg font-semibold text-white">Jasmine</h4>
+                        </div>
+                        <div class="bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                            <i class="fas fa-table fa-2x mb-2 text-blue-300"></i><h4 class="text-lg font-semibold text-white">Pandas</h4>
+                        </div>
+                        <div class="bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                            <i class="fab fa-flutter fa-2x mb-2 text-cyan-500"></i><h4 class="text-lg font-semibold text-white">Flutter</h4>
+                        </div>
+                        <div class="bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                            <i class="fab fa-microsoft fa-2x mb-2 text-sky-600"></i><h4 class="text-lg font-semibold text-white">Azure</h4> </div>
+                        <div class="bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                            <i class="fas fa-cubes fa-2x mb-2 text-blue-700"></i><h4 class="text-lg font-semibold text-white">Data Bricks</h4>
+                        </div>
+                        <div class="bg-slate-700 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                            <i class="fas fa-bed fa-2x mb-2 text-red-400"></i><h4 class="text-lg font-semibold text-white">Hibernate</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-16 md:py-24 fade-in-section">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-sky-400">Work Experience</h2>
+                <div class="max-w-3xl mx-auto space-y-10">
+                    <div class="bg-slate-800 p-6 rounded-lg shadow-lg relative ring-1 ring-slate-700 hover:ring-sky-500 transition-all duration-300">
+                        <div class="absolute -top-3 -left-3 bg-sky-500 text-white text-xs font-bold px-2 py-1 rounded">PRESENT</div>
+                        <h3 class="text-2xl font-semibold text-white">Software Developer</h3>
+                        <p class="text-sky-300 font-medium mb-1">First Command Financial Services, Fort Worth, TX | Aug 2023 - Present</p>
+                        <ul class="list-disc list-inside text-slate-300 space-y-1 text-sm">
+                            <li>Developed license verification APIs, replacing legacy systems to minimize compliance risks.</li>
+                            <li>Implemented event-driven architecture using Microsoft Azure Service Bus for multiple in-house applications, enhancing system robustness and resilience.</li>
+                            <li>Added functionality to existing insurance-related applications used by advisors.</li>
+                            <li>Led a team in the full SDLC of an enterprise document archiving system for new account opening, saving over 98% of manual effort.</li>
+                            <li>Coordinated with 3rd party vendors on multiple projects.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-800 p-6 rounded-lg shadow-lg relative ring-1 ring-slate-700 hover:ring-sky-500 transition-all duration-300">
+                        <h3 class="text-2xl font-semibold text-white">Programmer Analyst</h3>
+                        <p class="text-sky-300 font-medium mb-1">First Command Financial Services, Fort Worth, TX | Feb 2022 - Aug 2023</p>
+                        <ul class="list-disc list-inside text-slate-300 space-y-1 text-sm">
+                            <li>Updated and maintained Laserfiche workflows and business processes.</li>
+                            <li>Simplified financial planning by removing extra document generation, ensuring compliance.</li>
+                            <li>Enabled automated actions for investment/saving accounts using Angular, reducing manual efforts.</li>
+                            <li>Devised and rearchitected new insurance business flow for multi-insured policies, saving 60+ minutes per application.</li>
+                            <li>Upgraded old SQL Server Integration Services packages, saving $1,000 in potential fines.</li>
+                        </ul>
+                    </div>
+                     <div class="bg-slate-800 p-6 rounded-lg shadow-lg relative ring-1 ring-slate-700 hover:ring-sky-500 transition-all duration-300">
+                        <h3 class="text-2xl font-semibold text-white">Associate Programmer</h3>
+                        <p class="text-sky-300 font-medium mb-1">First Command Financial Services, Fort Worth, TX | Sep 2020 - Feb 2022</p>
+                        <ul class="list-disc list-inside text-slate-300 space-y-1 text-sm">
+                            <li>Designed serverless solutions (MS Azure Function App) and Azure Data Factory pipelines.</li>
+                            <li>Collaborated with DevOps for CI/CD automation using Terraform, reducing manual steps.</li>
+                            <li>Evaluated and documented data sources for Microsoft Dynamics CRM to Salesforce migration.</li>
+                            <li>Organized end-to-end testing for CRM migration, reducing production bugs.</li>
+                            <li>Maintained applications, solved issues, and prevented hundreds of bugs.</li>
+                            <li>Monitored server logs for e-application failures and delivered bug fixes.</li>
+                            <li>Processed heavy .csv files using Databricks for business logic implementation.</li>
+                        </ul>
+                    </div>
+                     <div class="bg-slate-800 p-6 rounded-lg shadow-lg relative ring-1 ring-slate-700 hover:ring-sky-500 transition-all duration-300">
+                        <h3 class="text-2xl font-semibold text-white">Software Developer Intern</h3>
+                        <p class="text-sky-300 font-medium mb-1">Vastika Inc., Irving, TX | Aug 2020 - Sep 2020</p>
+                        <ul class="list-disc list-inside text-slate-300 space-y-1 text-sm">
+                            <li>Collaborated to design and implement relational database schema.</li>
+                            <li>Fetched and updated user data for an automatic tax filing process.</li>
+                            <li>Assisted in creating a web app with Spring Boot (MVC).</li>
+                            <li>Modified and maintained JSP servlet pages, adding client-requested features.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-800 p-6 rounded-lg shadow-lg relative ring-1 ring-slate-700 hover:ring-sky-500 transition-all duration-300">
+                        <h3 class="text-2xl font-semibold text-white">Software Engineering Intern</h3>
+                        <p class="text-sky-300 font-medium mb-1">Avior Data, TX | Jul 2020 - Aug 2020</p>
+                        <ul class="list-disc list-inside text-slate-300 space-y-1 text-sm">
+                            <li>Converted state, federal, and local tax forms into XML for automation.</li>
+                            <li>Fetched and updated user data for automatic tax filing.</li>
+                            <li>Designed and ran test cases in a sandbox environment.</li>
+                            <li>Developed Python scripts to automate manual processes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications" class="py-16 md:py-24 bg-slate-800 fade-in-section">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-sky-400">Certifications</h2>
+                <div class="max-w-md mx-auto space-y-4 text-center">
+                    <div class="bg-slate-700 p-4 rounded-lg shadow-md">
+                        <i class="fas fa-award fa-lg mr-2 text-yellow-400"></i>
+                        <span class="text-lg text-white">Certified SAFe 5 DevOps Practitioner</span>
+                    </div>
+                    <div class="bg-slate-700 p-4 rounded-lg shadow-md">
+                        <i class="fas fa-award fa-lg mr-2 text-yellow-400"></i>
+                        <span class="text-lg text-white">Certified SAFe® 5 Practitioner</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 md:py-24 fade-in-section">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-sky-400">Get In Touch</h2>
+                <div class="max-w-xl mx-auto text-center"> <p class="text-lg mb-6 text-slate-300">
+                        Have a project in mind, a question, or just want to connect? I'd love to hear from you!
+                    </p>
+                    <p class="text-xl text-slate-300">
+                        Feel free to email me directly at:
+                    </p>
+                    <a href="mailto:pujan.budhathoki@hotmail.com" 
+                       class="inline-block mt-4 bg-sky-500 hover:bg-sky-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition-colors shadow-md hover:shadow-lg transform hover:scale-105">
+                       <i class="fas fa-envelope mr-2"></i> pujan.budhathoki@hotmail.com
+                    </a>
+                    <p class="mt-10 text-slate-400">
+                        You can also find me on these platforms:
+                    </p>
+                     <div class="mt-6 flex justify-center space-x-6">
+                        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-sky-400 transition-colors" title="GitHub">
+                            <i class="fab fa-github fa-2x"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/pujanbu/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-sky-400 transition-colors" title="LinkedIn">
+                            <i class="fab fa-linkedin fa-2x"></i>
+                        </a>
+                        <a href="https://devpost.com/PujanBudhathoki" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-sky-400 transition-colors" title="Devpost">
+                             <i class="fas fa-code fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-8 bg-slate-900 border-t border-slate-700">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-4 flex justify-center space-x-6">
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-sky-400 transition-colors" title="GitHub">
+                    <i class="fab fa-github fa-lg"></i>
+                </a>
+                <a href="https://linkedin.com/in/pujanbu/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-sky-400 transition-colors" title="LinkedIn">
+                    <i class="fab fa-linkedin fa-lg"></i>
+                </a>
+                <a href="https://devpost.com/PujanBudhathoki" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-sky-400 transition-colors" title="Devpost">
+                     <i class="fas fa-code fa-lg"></i>
+                </a>
+            </div>
+            <p class="text-sm text-slate-500">&copy; <span id="currentYear"></span> Pujan Budhathoki. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="hidden fixed bottom-6 right-6 bg-sky-500 hover:bg-sky-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 ease-in-out opacity-0 transform translate-y-2 focus:outline-none focus:ring-2 focus:ring-sky-400">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
+
+    <script>
+        // JavaScript for dynamic year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Smooth scrolling for navigation links & mobile menu link clicks
+        document.querySelectorAll('header nav a[href^="#"], #mobile-menu a[href^="#"], #hero a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Calculate offset for fixed header
+                    const headerOffset = document.querySelector('header').offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                         // Reset mobile menu icon
+                        const menuButton = document.getElementById('mobile-menu-button');
+                        menuButton.innerHTML = `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>`;
+                    }
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            // Change icon to X when menu is open
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenuButton.innerHTML = `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>`;
+            } else {
+                mobileMenuButton.innerHTML = `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`;
+            }
+        });
+
+        // Back to Top button functionality
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) { // Show button after scrolling 300px
+                backToTopButton.classList.remove('hidden', 'opacity-0', 'translate-y-2');
+                backToTopButton.classList.add('opacity-100', 'translate-y-0');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'translate-y-2');
+                // Wait for transition to finish before hiding
+                setTimeout(() => {
+                     if(window.pageYOffset <= 300) { // Check again in case user scrolled back up quickly
+                        backToTopButton.classList.add('hidden');
+                     }
+                }, 300); // Match transition duration
+            }
+        });
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Intersection Observer for fade-in animations
+        const sections = document.querySelectorAll('.fade-in-section');
+        const options = {
+            root: null, 
+            rootMargin: '0px', 
+            threshold: 0.1 // Trigger when 10% of the section is visible
+        };
+
+        const observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                } else {
+                    // Optional: remove class if you want fade-out on scroll-away
+                    // entry.target.classList.remove('is-visible');
+                }
+            });
+        }, options);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
